@@ -4,6 +4,14 @@ import logo from "../../assets/img/landingPage/logo1.jpg";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
+
+  function handleClick() {
+    window.open(
+      "https://643b83543ca51b7183dc1b00--lighthearted-lamington-29acbc.netlify.app/",
+      "_blank"
+    );
+  }
+
   const location = useLocation();
   return (
     <nav className="lg:bg-white lg:w-screen lg:h-14 shadow-sm lg:px-16 lg:py-3 flex justify-items-center items-center  w-full ">
@@ -11,6 +19,7 @@ export default function Navbar() {
         src={logo}
         alt="logo"
         className="lg:h-10 lg:pr-3 h-10 pr-4 pl-2 mt-2"
+        onClick={handleClick}
       />
       <h1 className="font-poppins font-bold text-sm lg:text-xl mt-2 mb-2">
         <Link to="/">Medical Tourism</Link>
@@ -19,8 +28,8 @@ export default function Navbar() {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to="/about">About us</Link>
+        <li onClick={handleClick}>
+          About us
         </li>
         <li>
           <Link to="/contact">Contact us</Link>
