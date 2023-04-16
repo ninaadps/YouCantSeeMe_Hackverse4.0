@@ -1,4 +1,4 @@
-import logo from "../../assets/img/landingPage/logo.png";
+import logo from "../../assets/img/landingPage/logo1.jpg";
 import add_doctor from "../../assets/img/dashboard/add_doctor.png";
 import patient_list from "../../assets/img/dashboard/patient_list.png";
 import doctor_list from "../../assets/img/dashboard/doctor_list.png";
@@ -9,16 +9,19 @@ import dashboard from "../../assets/img/dashboard/dashboard.jpeg";
 
 const AdminSidebar = (props) => {
   const navigate = useNavigate();
+
+
   const logout = async () => {
     const res = await fetch("/logout");
     props.settoastCondition({
       status: "success",
       message: "Logged out Successfully!!!",
     });
-    props.setToastShow(true);
+    props.setToastShow(true);   // successful logout
     navigate("/");
   };
 
+  // Which link is currently active
   const [Toggle, setToggle] = useState("Dashboard");
 
   return (
@@ -35,6 +38,7 @@ const AdminSidebar = (props) => {
           </div>
         </div>
         <nav>
+        {/* Dashboard to show registered patient's lists */}
           <Link
             to="/admin/dashboard"
             onClick={() => setToggle("Dashboard")}
@@ -52,6 +56,7 @@ const AdminSidebar = (props) => {
             </div>
           </Link>
 
+            {/* Admin has the functionality to add doctor */}
           <Link
             to="/admin/registerdoctor"
             onClick={() => setToggle("Reports")}
@@ -66,6 +71,7 @@ const AdminSidebar = (props) => {
               </div>
             </div>
           </Link>
+          
 
           <div className="p-4">
             <h1 className="font-poppins font-bold text-xl mt-4">Main menu</h1>

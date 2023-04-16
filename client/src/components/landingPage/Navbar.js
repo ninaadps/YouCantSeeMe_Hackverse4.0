@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/img/landingPage/logo.png";
+import logo from "../../assets/img/landingPage/logo1.jpg";
 
 import { Link, useLocation } from "react-router-dom";
 
@@ -13,7 +13,7 @@ export default function Navbar() {
         className="lg:h-10 lg:pr-3 h-10 pr-4 pl-2 mt-2"
       />
       <h1 className="font-poppins font-bold text-sm lg:text-xl mt-2 mb-2">
-        <Link to="/">Healthcare Management System</Link>
+        <Link to="/">Medical Tourism</Link>
       </h1>
       <ul className="flex ml-auto lg:w-60 justify-evenly  font-lato font-semibold w-64 ">
         <li>

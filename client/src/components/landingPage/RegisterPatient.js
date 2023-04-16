@@ -64,6 +64,8 @@ export default function Register(props) {
     },
   });
 
+  
+
   useEffect(() => {
     const auth = async () => {
       const res = await fetch("/auth");
@@ -81,8 +83,9 @@ export default function Register(props) {
     auth();
   });
 
+  // Password === confirmPassword
   const handleRegisterPatient = async (e) => {
-    e.preventDefault();
+    e.preventDefault();   // To prevent form from being submitted
     setPasswordError("");
     if (patient.password === confirmPassword) {
       setLoading(true);
